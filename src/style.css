@@ -1,0 +1,27 @@
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ivory;
+}
+
+/* we do this because of useGesture and presentation controls */
+
+.r3f {
+    touch-action: none
+}
+
+/* making it larger so that resolution looks better on laptop model */
+.htmlScreen iframe {
+    width: 1024px;
+    height: 670px;
+    border: none;
+    border-radius: 20px;
+    /* laptop model screen will be this color while website is loading */
+    background: #000000; 
+}
