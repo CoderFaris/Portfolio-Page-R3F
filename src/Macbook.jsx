@@ -10,7 +10,7 @@ import * as THREE from 'three';
 
 
 export function Macbook(props) {
-  const { nodes, materials } = useGLTF('/model.gltf')
+  const { nodes, materials } = useGLTF('/model-draco.gltf')
 
   const [ laptopClose ] = useState(()=>new Audio('./sounds/laptopclose.mp3'));
   const [ laptopType ] = useState(()=>new Audio('./sounds/laptoptyping.mp3'));
@@ -332,4 +332,4 @@ export function Macbook(props) {
   )
 }
 
-useGLTF.preload('/model.gltf')
+useGLTF.preload('/model-draco.gltf')

@@ -1,8 +1,9 @@
 // market.pmnd.rs is a good place for threejs r3f models
 
-import { Text, Html, PresentationControls, Float, Environment, useGLTF, ContactShadows } from '@react-three/drei'
+import { Text, PresentationControls, Float, ContactShadows } from '@react-three/drei'
 import { Macbook } from './Macbook.jsx';
 import { useThree } from '@react-three/fiber';
+
 
 export default function Experience()
 {
@@ -18,12 +19,17 @@ export default function Experience()
     const textScale = Math.min(1, viewport.width / 8);
     const yPos = viewport.width < 5 ? -0.6 : -1.2;
     // const textX = viewport.width * 0.2; // this means it's 20% off center
-
     
 
     return <>
         {/* reflection of city shown on laptop screen */}
-        <Environment preset="city"/>
+        {/* <Environment preset="city"/> */}
+
+        <ambientLight intensity={2.5} />
+
+        <directionalLight position={[5, 5, 5]} intensity={1.2}/>
+        <directionalLight position={[-5, 5, 3]} intensity={0.6} />
+        <directionalLight position={[0, -5, -5]} intensity={0.4} />
 
         <color args={['#241a1a']} attach="background"/>
 
@@ -42,7 +48,7 @@ export default function Experience()
                 <rectAreaLight
                     width={2.5}
                     height={1.65}
-                    intensity={65}
+                    intensity={25}
                     color={'#9d00ff'}
                     rotation={[-0.1, Math.PI, 0]}
                     position={[0, 0.55, -1.15]}
